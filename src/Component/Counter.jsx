@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addOne } from '../Actions'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addOne,subOne } from '../Actions/index'
 
 export default function Counter() {
-    const [count,setcount]=useState(0)
     const dispatch = useDispatch()
-    
+    const mystate = useSelector((state)=>state.changeNum) 
     return (
         <>
 
             <button onClick={()=> dispatch(addOne())}>-</button>
-            <h1>{count}</h1>
-            <button onClick={()=> dispatch(incFun())}>+</button>
+            <h1>{mystate}</h1>
+            <button onClick={()=> dispatch(subOne())}>-</button>
         </>
     )
 }
