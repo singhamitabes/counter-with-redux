@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addOne } from '../Actions'
 
 export default function Counter() {
     const [count,setcount]=useState(0)
-    function decFun(){
-        setcount(count-1)
-    }
-    function incFun(){
-        setcount(count+1)
-    }
+    const dispatch = useDispatch()
+    
     return (
         <>
-        
 
-            {/* <button onClick={decFun}>-</button>
+            <button onClick={()=> dispatch(addOne())}>-</button>
             <h1>{count}</h1>
-            <button onClick={incFun}>+</button> */}
+            <button onClick={()=> dispatch(incFun())}>+</button>
         </>
     )
 }
