@@ -10,9 +10,11 @@ export default function Counter() {
     }
     return (
         <>
-            <button onClick={decFun}>-</button>
+        
+
+            {/* <button onClick={decFun}>-</button>
             <h1>{count}</h1>
-            <button onClick={incFun}>+</button>
+            <button onClick={incFun}>+</button> */}
         </>
     )
 }
